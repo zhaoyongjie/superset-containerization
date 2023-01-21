@@ -4,6 +4,7 @@ from typing import Optional
 
 
 logger = logging.getLogger()
+LOG_FORMAT = "[%(thread)s]:%(asctime)s:%(levelname)s:%(process)d:%(name)s:%(message)s"
 
 
 def get_env_variable(var_name: str, default: Optional[str] = None) -> str:
@@ -53,6 +54,13 @@ EXPLORE_FORM_DATA_CACHE_CONFIG = CACHE_CONFIG
 # Security
 SECRET_KEY = "HbJUf96F9swUYq5YCBOUZ3clkYQFqSTm6AJbL97T9ZVkSAO+XzVuZae2"
 CONTENT_SECURITY_POLICY_WARNING = False
+ENABLE_CORS = True
+CORS_OPTIONS = {
+  'supports_credentials': True,
+  'allow_headers': ['*'],
+  'resources':['*'],
+  'origins': ['*']
+}
 
 # Feature Flags
 FEATURE_FLAGS = {
@@ -68,4 +76,6 @@ FEATURE_FLAGS = {
     "GENERIC_CHART_AXES": True,
     "DRILL_TO_DETAIL": True,
     "DATAPANEL_CLOSED_BY_DEFAULT": True,
+
+    "EMBEDDED_SUPERSET": True,
 }
