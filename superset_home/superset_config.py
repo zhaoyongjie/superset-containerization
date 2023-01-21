@@ -61,6 +61,7 @@ CORS_OPTIONS = {
   'resources':['*'],
   'origins': ['*']
 }
+AUTH_ROLE_PUBLIC = "Gamma"
 
 # Feature Flags
 FEATURE_FLAGS = {
