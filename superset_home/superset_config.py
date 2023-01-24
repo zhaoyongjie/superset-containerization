@@ -58,7 +58,7 @@ ENABLE_CORS = True
 CORS_OPTIONS = {
   'supports_credentials': True,
   'allow_headers': ['*'],
-  'resources':['*'],
+  'resources': ['*'],
   'origins': ['*']
 }
 AUTH_ROLE_PUBLIC = "Gamma"
