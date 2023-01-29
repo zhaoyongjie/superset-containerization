@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-x-superset-image: &superset-image apache/superset:2.0.1
+x-superset-image: &superset-image .
 x-superset-user: &superset-user root
 x-superset-depends-on: &superset-depends-on
   - db
@@ -42,7 +42,7 @@ services:
 
   superset:
     env_file: docker/.env-non-dev
-    image: *superset-image
+    build: *superset-image
     container_name: superset_app
     command: ["/app/docker/docker-bootstrap.sh", "app-gunicorn"]
     restart: unless-stopped
@@ -53,7 +53,7 @@ services:
     volumes: *superset-volumes
 
   superset-init:
-    image: *superset-image
+    build: *superset-image
     container_name: superset_init
     command: ["/app/docker/docker-init.sh"]
     env_file: docker/.env-non-dev
@@ -62,6 +62,15 @@ services:
     volumes: *superset-volumes
     healthcheck:
       disable: true
+
+  trino:
+    image: trinodb/trino:406
+    container_name: trino
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    volumes:
+      - ./docker/mongodb.properties:/etc/trino/catalog/mongodb.properties
 
 volumes:
   superset_home:
