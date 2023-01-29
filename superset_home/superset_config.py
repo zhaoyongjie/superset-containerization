@@ -2,7 +2,6 @@ import logging
 import os
 from typing import Optional
 
-
 logger = logging.getLogger()
 LOG_FORMAT = "[%(thread)s]:%(asctime)s:%(levelname)s:%(process)d:%(name)s:%(message)s"
 
@@ -56,10 +55,10 @@ SECRET_KEY = "HbJUf96F9swUYq5YCBOUZ3clkYQFqSTm6AJbL97T9ZVkSAO+XzVuZae2"
 CONTENT_SECURITY_POLICY_WARNING = False
 ENABLE_CORS = True
 CORS_OPTIONS = {
-  'supports_credentials': True,
-  'allow_headers': ['*'],
-  'resources': ['*'],
-  'origins': ['*']
+    'supports_credentials': True,
+    'allow_headers': ['*'],
+    'resources': ['*'],
+    'origins': ['*']
 }
 AUTH_ROLE_PUBLIC = "Gamma"
 
@@ -80,3 +79,5 @@ FEATURE_FLAGS = {
 
     "EMBEDDED_SUPERSET": True,
 }
+
+GUEST_TOKEN_JWT_EXP_SECONDS = 2 * 24 * 60 * 60  # 2 days
