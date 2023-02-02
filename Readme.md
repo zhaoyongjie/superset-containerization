@@ -1,6 +1,6 @@
 # Summary
 
-This project intends to do 3 keys goals:
+This project intends to do 3 key goals:
 1. Query MongoDB through Apache Superset 2.0.1
 2. Create an embedded dashboard and a demonstration how to do it through a React App
 3. Build a simple and reusable docker-compose file so that quick start a Superset instance with Trino
