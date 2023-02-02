@@ -2,8 +2,8 @@
 
 This project intends to do 3 key goals:
 1. Query MongoDB through Apache Superset 2.0.1
-2. Create an embedded dashboard and a demonstration how to do it through a React App
-3. Build a simple and reusable docker-compose file so that quick start a Superset instance with Trino
+2. Create an embedded dashboard and a demonstration how to do it by a React App
+3. Build full project by a simple and reusable docker-compose file so that quick start a Superset instance and Trino
 
 # Steps 
 
@@ -11,7 +11,7 @@ This project intends to do 3 key goals:
     ```bash
     git clone https://github.com/zhaoyongjie/superset-containerization.git
     ```
-2. edit `mongodb.connection-url` in `docker/mongodb.properties`, fills up corresponding mongodb URI. 
+2. Edit `mongodb.connection-url` in `docker/mongodb.properties`, fills up corresponding mongodb URI. 
 3. Startup Superset via docker-compose, notice that 1)There are some environment variables to declare in the `docker/.env-non-dev`. 2) the file `superset_home/superset_config.py` will override the `config.py` and read Database and Redis config from the `docker/.env-non-dev`.
     ```
     cd superset-containerization
