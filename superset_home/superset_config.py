@@ -47,7 +47,7 @@ REDIS_RESULTS_DB = get_env_variable("REDIS_RESULTS_DB", "1")
 
 CACHE_CONFIG = {
     "CACHE_TYPE": "redis",
-    "CACHE_DEFAULT_TIMEOUT": 300,
+    "CACHE_DEFAULT_TIMEOUT": 60 * 60,  # 1 hour
     "CACHE_KEY_PREFIX": "superset_",
     "CACHE_REDIS_HOST": REDIS_HOST,
     "CACHE_REDIS_PORT": REDIS_PORT,
