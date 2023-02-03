@@ -1,11 +1,10 @@
-import logging
 import os
 from typing import Optional
 
 from cachelib.redis import RedisCache
 
-logger = logging.getLogger()
 LOG_FORMAT = "[%(thread)s]:%(asctime)s:%(levelname)s:%(process)d:%(name)s:%(message)s"
+LOG_LEVEL = "INFO"
 
 
 def get_env_variable(var_name: str, default: Optional[str] = None) -> str:
