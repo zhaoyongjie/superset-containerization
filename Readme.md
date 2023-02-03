@@ -1,9 +1,10 @@
 # Summary
 
-This project intends to do 3 key goals:
+This project intends to do 4 key goals:
 1. Query MongoDB through Apache Superset 2.0.1
 2. Create an embedded dashboard and a demonstration how to do it by a React App
 3. Build full project by a simple and reusable docker-compose file so that quick start a Superset instance and Trino
+4. Enable Celery worker for SQLLab and turn on the Global Async Query so that optimize performance for Dashboard loading
 
 # Steps 
 
