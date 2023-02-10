@@ -47,6 +47,8 @@ services:
     restart: unless-stopped
     ports:
       - 8088:80
+      - 443:443
+      - 80:80
     user: *superset-user
     depends_on: *superset-depends-on
     volumes:
