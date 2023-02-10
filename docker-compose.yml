@@ -50,8 +50,17 @@ services:
     user: *superset-user
     depends_on: *superset-depends-on
     volumes:
-      - asset-volume:/app/superset/static
-      - ./docker/default.conf:/etc/nginx/conf.d/default.conf
+      - asset-volume:/app/superset/static:ro
+      - ./docker/nginx_conf/superset.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./docker/certbot/www/:/var/www/certbot/:ro
+      - ./docker/certbot/conf/:/etc/nginx/ssl/:ro
+
+  certbot:
+    image: certbot/certbot:latest
+    container_name: superset_certbot
+    volumes:
+      - ./docker/certbot/www/:/var/www/certbot/:rw
+      - ./docker/certbot/conf/:/etc/letsencrypt/:rw
 
   superset:
     env_file: docker/.env-non-dev

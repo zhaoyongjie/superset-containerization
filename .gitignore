@@ -108,5 +108,6 @@ release.json
 messages.mo
 
 docker/requirements-local.txt
+docker/certbot
 
 cache/
